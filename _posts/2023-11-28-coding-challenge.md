@@ -3,7 +3,6 @@ layout: post
 title: A Coding Challenge
 ---
 
-## A Coding Challenge
 ### The Brief
 Given five Word documents (CVs), use any programming language of your choice to find which files contain the word "Engineer". Return the names of these files.
 
