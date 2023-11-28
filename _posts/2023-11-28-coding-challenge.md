@@ -52,8 +52,6 @@ do
         #echo $unique_dir
         #mkdir $dir_name/$unique_dir
 
-        tryhard=$dir_name'/'$filename1'\ '$filename2'\ '$filename3
-
         unzip $dir_name/$filename1\ $filename2\ $filename3 -d $dir_name/$unique_dir >/dev/null
 
         if grep -ri "engineer" $dir_name/$unique_dir >/dev/null
