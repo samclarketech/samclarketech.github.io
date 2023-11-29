@@ -4,18 +4,20 @@ title: A Coding Challenge
 ---
 
 ### The Brief
-Given five Word documents (CVs), use any programming language of your choice to find which files contain the word "Engineer". Return the names of these files.
+Given five Word documents (CVs), use a programming language of your choice to find which files contain the word "Engineer". Return the names of these files.
 
 ![The Word Documents](/assets/images/word-docs.PNG)
 
 ### The Solution
-I wrote the below soluton in Bash. It is not elegant or efficient, but it works! The script needs to be in the parent directory of a directory named "working" which contains the Word docs.
+I wrote the below solution in Bash. It is not elegant or efficient, but it works! The script needs to be in the parent directory of a directory named "working" which contains the Word docs.
 
 Firstly, a for loop is used to iterate over each file and the filename is stored in a variable.
 
 Given Office documents are ZIP files, I use the unzip command to drop the contents of each to a unique folder. I then use grep to recursively search the unzipped files for the word "engineer" and, if found, the file name is printed to the screen.
 
 Any unwanted output is sent to /dev/null.
+
+Script link: [https://github.com/samclarketech/coding-challenge](https://github.com/samclarketech/coding-challenge)
 
 ```bash
 #!/bin/bash
