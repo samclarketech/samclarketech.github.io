@@ -22,6 +22,8 @@ Script link: [https://github.com/samclarketech/coding-challenge](https://github.
 ```bash
 #!/bin/bash
 
+# thought process/notes:
+
 # iterate over the files in the containing dir
 # take the filename and store in variable
 # Brian\ Morris\ CV.docx - filename with escaped spaces
@@ -38,28 +40,21 @@ dir_name=working
 
 for file in $directory
 do
-        filename1=$(echo $file | awk -F '/' '{print $2}' | cut -d' ' -f1)
-        #echo $filename1
+	# split filename by the space, store each part in var
+	filename1=$(echo $file | awk -F '/' '{print $2}' | cut -d' ' -f1)
+	filename2=$(echo $file | awk -F '/' '{print $2}' | cut -d' ' -f2)
+	filename3=$(echo $file | awk -F '/' '{print $2}' | cut -d' ' -f3)
 
-        filename2=$(echo $file | awk -F '/' '{print $2}' | cut -d' ' -f2)
-        #echo $filename2
+	unique_dir=$(echo $file | awk -F '/' '{print $2}' | cut -d' ' -f1)
 
-        filename3=$(echo $file | awk -F '/' '{print $2}' | cut -d' ' -f3)
-        #echo $filename3
+	filename=$filename1' '$filename2' '$filename3
 
-        filename=$filename1'\ '$filename2'\ '$filename3
-        #echo $filename
-
-        unique_dir=$(echo $file | awk -F '/' '{print $2}' | cut -d' ' -f1)
-        #echo $unique_dir
-        #mkdir $dir_name/$unique_dir
-
-        unzip $dir_name/$filename1\ $filename2\ $filename3 -d $dir_name/$unique_dir >/dev/null
-
-        if grep -ri "engineer" $dir_name/$unique_dir >/dev/null
-        then
-                echo $filename
-        fi
+	unzip $dir_name/$filename1\ $filename2\ $filename3 -d $dir_name/$unique_dir >/dev/null
+	
+	if grep -ri "engineer" $dir_name/$unique_dir >/dev/null
+	then
+		echo $filename
+	fi
 done
 ```
 
