@@ -123,5 +123,5 @@ sudo less /root/3rd.txt
 
 <div style="text-align:center;">
 	<h2>Find me on TryHackMe:</h2>
-	<a href="https://tryhackme.com/p/clars"><img src="https://tryhackme-badges.s3.amazonaws.com/clars.png" alt="TryHackMe"></a>
+	<a href="https://tryhackme.com/p/samclarke"><img src="https://tryhackme-badges.s3.amazonaws.com/samclarke.png" alt="TryHackMe"></a>
 </div>
